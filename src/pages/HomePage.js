@@ -1,9 +1,10 @@
-import React from "react"
+import React from "react";
+import ProductFeed from "../components/ProductFeed";
 
 export default function HomePage() {
   return (
     <div>
-      <h1>Products</h1>
+      <ProductFeed />
     </div>
-  )
+  );
 }
