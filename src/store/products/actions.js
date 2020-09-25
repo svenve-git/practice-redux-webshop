@@ -1,22 +1,22 @@
-import axios from "axios"
+import axios from "axios";
 
 export const startLoading = (payload) => ({
   type: "START_LOADING",
-})
+});
 
 export const productsFetched = (payload) => ({
   type: "PRODUCTS_FETCHED",
   payload,
-})
+});
 
 export function getProducts() {
   return async function thunk(dispatch, getState) {
-    dispatch(startLoading)
-    const response = await axios.get("http://localhost:4000/products")
-    console.log("response:", response)
-    const products = response.data
-    dispatch(productsFetched(products))
-  }
+    dispatch(startLoading);
+    const response = await axios.get("http://localhost:4000/products");
+    const products = response.data;
+    console.log("products:", products);
+    dispatch(productsFetched(products));
+  };
 }
 
 /* export function fetchPost(id) {
